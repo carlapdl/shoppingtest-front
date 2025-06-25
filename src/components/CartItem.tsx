@@ -80,7 +80,7 @@ const CartItem = ({ item, className }: CartItemProps) => {
         </div>
 
         {/* Size Selector - Compact Version */}
-        <div className="space-y-2">
+        <div className="space-y-2" data-testid="cart-item-attribute-size">
           <label className="block text-xs font-medium text-gray-900">
             Size:
           </label>
@@ -89,6 +89,7 @@ const CartItem = ({ item, className }: CartItemProps) => {
               <button
                 key={size}
                 onClick={() => handleSizeChange(size)}
+                data-testid={`cart-item-attribute-size-${size.toLowerCase()}${localSize === size ? "-selected" : ""}`}
                 className={cn(
                   "w-6 h-6 text-xs border transition-colors duration-200",
                   localSize === size
@@ -103,7 +104,7 @@ const CartItem = ({ item, className }: CartItemProps) => {
         </div>
 
         {/* Color Selector - Compact Version */}
-        <div className="space-y-2">
+        <div className="space-y-2" data-testid="cart-item-attribute-color">
           <label className="block text-xs font-medium text-gray-900">
             Color:
           </label>
@@ -112,6 +113,7 @@ const CartItem = ({ item, className }: CartItemProps) => {
               <button
                 key={color.value}
                 onClick={() => handleColorChange(color.value)}
+                data-testid={`cart-item-attribute-color-${color.value}${localColor === color.value ? "-selected" : ""}`}
                 className={cn(
                   "w-5 h-5 rounded-full border transition-all duration-200",
                   color.bgClass,
