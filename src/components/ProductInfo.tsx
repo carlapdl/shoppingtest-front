@@ -78,6 +78,7 @@ const ProductInfo = ({
       <button
         onClick={handleAddToCart}
         className="w-full bg-brand-green text-white py-3 px-6 font-medium text-sm tracking-wide hover:bg-opacity-90 transition-colors duration-200"
+        data-testid='cart-btn'
       >
         ADD TO CART
       </button>

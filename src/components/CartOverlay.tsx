@@ -8,6 +8,20 @@ interface CartOverlayProps {
   className?: string;
 }
 
+/**
+ * itemCountText
+ * - number of items to be displayed in My Cart
+ * - 1 = item
+ * - more than 1 = items
+ * 
+ * @param itemCount 
+ * @returns 
+ */
+const itemCountText = (itemCount) => {
+    const itemText = itemCount === 1 ? ' item' : ' items';
+    return itemCount + itemText;
+};
+
 const CartOverlay = ({ className }: CartOverlayProps) => {
   const { isOpen, items, getItemCount, closeCart } = useCart();
 
@@ -32,7 +46,9 @@ const CartOverlay = ({ className }: CartOverlayProps) => {
         <div className="flex items-center justify-between p-6 border-b border-gray-200">
           <div>
             <h2 className="text-lg font-medium text-gray-900">My Bag</h2>
-            <p className="text-sm text-gray-600">{getItemCount()} items</p>
+            <p className="text-sm text-gray-600">
+                {itemCountText(getItemCount())} 
+            </p>
           </div>
           <button
             onClick={closeCart}

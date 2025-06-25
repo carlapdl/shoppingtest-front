@@ -60,7 +60,7 @@ const Header = ({ className }: HeaderProps) => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <div className="w-10 h-10 rounded-sm flex items-center justify-center">
-              <img src="./public/assets/green-shopping-bag.png" />
+              <img src="/assets/green-shopping-bag.png" />
             </div>
           </div>
 
