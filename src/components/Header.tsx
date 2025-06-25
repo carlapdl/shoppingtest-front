@@ -45,6 +45,11 @@ const Header = ({ className }: HeaderProps) => {
               <button
                 key={tab.name}
                 onClick={() => handleTabClick(tab)}
+                data-testid={
+                  activeTab === tab.name
+                    ? "active-category-link"
+                    : "category-link"
+                }
                 className={cn(
                   "py-2 px-1 border-b-2 font-medium text-sm tracking-wide transition-colors duration-200",
                   activeTab === tab.name
