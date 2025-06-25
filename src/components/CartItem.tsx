@@ -62,6 +62,7 @@ const CartItem = ({ item, className }: CartItemProps) => {
             <div className="flex items-center border border-gray-300">
               <button
                 onClick={handleQuantityDecrease}
+                data-testid="cart-item-amount-decrease"
                 className="w-6 h-6 flex items-center justify-center hover:bg-gray-50"
               >
                 <Minus className="w-3 h-3" />
@@ -71,6 +72,7 @@ const CartItem = ({ item, className }: CartItemProps) => {
               </span>
               <button
                 onClick={handleQuantityIncrease}
+                data-testid="cart-item-amount-increase"
                 className="w-6 h-6 flex items-center justify-center hover:bg-gray-50"
               >
                 <Plus className="w-3 h-3" />
