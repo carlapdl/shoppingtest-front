@@ -67,7 +67,7 @@ const CartItem = ({ item, className }: CartItemProps) => {
               >
                 <Minus className="w-3 h-3" />
               </button>
-              <span className="w-8 h-6 flex items-center justify-center text-sm border-x border-gray-300">
+              <span className="w-8 h-6 flex items-center justify-center text-sm border-x border-gray-300" data-testid="cart-item-amount">
                 {item.quantity}
               </span>
               <button
