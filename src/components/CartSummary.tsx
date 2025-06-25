@@ -13,7 +13,7 @@ const CartSummary = ({ className }: CartSummaryProps) => {
       {/* Total */}
       <div className="flex justify-between items-center">
         <span className="text-lg font-medium text-gray-900">Total</span>
-        <span className="text-lg font-medium text-gray-900">
+        <span className="text-lg font-medium text-gray-900" data-testid="cart-total">
           ${getTotal().toFixed(2)}
         </span>
       </div>
