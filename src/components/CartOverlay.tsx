@@ -29,19 +29,20 @@ const CartOverlay = ({ className }: CartOverlayProps) => {
 
   return (
     <>
-      {/* Background Overlay */}
+      {/* Background Overlay - positioned below header */}
       <div
-        className="fixed inset-0 bg-black bg-opacity-40 z-40"
+        className="fixed top-16 left-0 right-0 bottom-0 bg-black bg-opacity-40 z-40"
         onClick={closeCart}
       />
 
-      {/* Cart Sidebar */}
+      {/* Cart Sidebar - positioned below header */}
       <div
         className={cn(
-          "fixed top-0 right-0 h-full w-96 bg-white shadow-2xl z-50 flex flex-col",
+          "fixed top-16 right-0 bottom-0 w-96 bg-white shadow-2xl z-50 flex flex-col",
           className,
         )}
       >
+        
         {/* Cart Header */}
         <div className="flex items-center justify-between p-6 border-b border-gray-200">
           <div>
