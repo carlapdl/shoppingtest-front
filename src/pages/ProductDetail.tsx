@@ -23,6 +23,7 @@ const productData = {
     { name: "Black", value: "black", bgClass: "bg-black" },
     { name: "Green", value: "green", bgClass: "bg-brand-green" },
   ],
+  isOutOfStock: false, // Set to true to test out-of-stock functionality
 };
 
 const ProductDetail = () => {
@@ -49,6 +50,7 @@ const ProductDetail = () => {
               sizes={productData.sizes}
               colors={productData.colors}
               image={productData.images[0]}
+              isOutOfStock={productData.isOutOfStock}
             />
           </div>
         </div>

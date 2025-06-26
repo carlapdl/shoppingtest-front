@@ -12,6 +12,7 @@ interface ProductInfoProps {
   sizes: string[];
   colors: Array<{ name: string; value: string; bgClass: string }>;
   image?: string;
+  isOutOfStock?: boolean;
   className?: string;
 }
 
@@ -23,6 +24,7 @@ const ProductInfo = ({
   sizes,
   colors,
   image = "",
+  isOutOfStock = true,
   className,
 }: ProductInfoProps) => {
   const { addItem, openCart } = useCart();
@@ -77,10 +79,16 @@ const ProductInfo = ({
       {/* Add to Cart Button */}
       <button
         onClick={handleAddToCart}
-        className="w-full bg-brand-green text-white py-3 px-6 font-medium text-sm tracking-wide hover:bg-opacity-90 transition-colors duration-200"
+        disabled={isOutOfStock}
+        className={cn(
+          "w-full py-3 px-6 font-medium text-sm tracking-wide transition-colors duration-200",
+          isOutOfStock
+            ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+            : "bg-brand-green text-white hover:bg-opacity-90",
+        )}
         data-testid='cart-btn'
       >
-        ADD TO CART
+        {isOutOfStock ? "OUT OF STOCK" : "ADD TO CART"}
       </button>
 
       {/* Product Description */}
