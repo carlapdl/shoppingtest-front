@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -10,6 +10,7 @@ interface ImageGalleryProps {
 
 const ImageGallery = ({ images, alt, className }: ImageGalleryProps) => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  const thumbnailContainerRef = useRef<HTMLDivElement>(null);
 
   const goToPrevious = () => {
     setSelectedImageIndex((prevIndex) =>
@@ -23,14 +24,52 @@ const ImageGallery = ({ images, alt, className }: ImageGalleryProps) => {
     );
   };
 
+  // Handle mouse wheel scrolling for main image navigation
+  const handleWheelScroll = (e: React.WheelEvent) => {
+    e.preventDefault();
+    if (e.deltaY > 0) {
+      goToNext();
+    } else {
+      goToPrevious();
+    }
+  };
+
+  // Handle keyboard navigation (Left and Right arrow keys)
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "ArrowLeft") {
+      goToPrevious();
+    } else if (e.key === "ArrowRight") {
+      goToNext();
+    }
+  };
+
+  // Scroll thumbnail into view when selected
+  const handleThumbnailClick = (index: number) => {
+    setSelectedImageIndex(index);
+    
+    // Scroll thumbnail into view
+    if (thumbnailContainerRef.current) {
+      const thumbnailElement = thumbnailContainerRef.current.children[index] as HTMLElement;
+      if (thumbnailElement) {
+        thumbnailElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'nearest',
+        });
+      }
+    }
+  };
+
   return (
     <div className={cn("flex gap-6", className)}>
       {/* Thumbnail Images - Scrollable */}
-      <div className="flex flex-col gap-3 max-h-96 overflow-y-auto thumbnail-scroll">
+      <div 
+        ref={thumbnailContainerRef}
+        className="flex flex-col gap-3 max-h-96 overflow-y-auto thumbnail-scroll scroll-smooth"
+      >
         {images.map((image, index) => (
           <button
             key={index}
-            onClick={() => setSelectedImageIndex(index)}
+            onClick={() => handleThumbnailClick(index)}
             className={cn(
               "w-16 h-16 border-2 transition-all duration-200 overflow-hidden flex-shrink-0",
               selectedImageIndex === index
@@ -49,7 +88,14 @@ const ImageGallery = ({ images, alt, className }: ImageGalleryProps) => {
 
       {/* Main Image with Navigation Arrows */}
       <div className="flex-1 relative">
-        <div className="aspect-square overflow-hidden bg-gray-50 max-h-96">
+        <div 
+          className="aspect-square overflow-hidden bg-gray-50 max-h-96 cursor-pointer"
+          onWheel={handleWheelScroll}
+          onKeyDown={handleKeyDown}
+          tabIndex={0}
+          role="img"
+          aria-label={`${alt}, image ${selectedImageIndex + 1} of ${images.length}. Use arrow keys or scroll to navigate.`}
+        >
           <img
             src={images[selectedImageIndex]}
             alt={alt}
