@@ -71,7 +71,7 @@ const ImageGallery = ({ images, alt, className }: ImageGalleryProps) => {
             key={index}
             onClick={() => handleThumbnailClick(index)}
             className={cn(
-              "w-16 h-16 border-2 transition-all duration-200 overflow-hidden flex-shrink-0",
+              "w-16 h-16 border-2 transition-all duration-700 overflow-hidden flex-shrink-0",
               selectedImageIndex === index
                 ? "border-gray-900"
                 : "border-gray-200 hover:border-gray-300",
