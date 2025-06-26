@@ -104,3 +104,29 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  /* Custom scrollbar for thumbnail gallery */
+  .thumbnail-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: #d1d5db #f3f4f6;
+  }
+
+  .thumbnail-scroll::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .thumbnail-scroll::-webkit-scrollbar-track {
+    background: #f3f4f6;
+    border-radius: 3px;
+  }
+
+  .thumbnail-scroll::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 3px;
+  }
+
+  .thumbnail-scroll::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af;
+  }
+}
