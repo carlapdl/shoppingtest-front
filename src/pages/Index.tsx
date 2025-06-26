@@ -8,7 +8,7 @@ const products = [
     name: "Running Short",
     price: 50.0,
     image:
-      "https://images.unsplash.com/photo-1567906503-7cc5ac882d2e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      "https://images.canadagoose.com/image/upload/w_480,c_scale,f_auto,q_auto:best/v1576016107/product-image/2409L_61_a.jpg",
     isOutOfStock: false,
     defaultSize: "XS", // First size option
     defaultColor: "light-gray", // First color option
@@ -18,7 +18,7 @@ const products = [
     name: "Running Short",
     price: 50.0,
     image:
-      "https://images.unsplash.com/photo-1583743814966-8936f37f8302?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      "https://cdn.shopify.com/s/files/1/0087/6193/3920/products/DD1381200_DEOA_2_720x.jpg?v=1612816087",
     isOutOfStock: false,
     defaultSize: "XS", // First size option
     defaultColor: "light-gray", // First color option
@@ -38,7 +38,7 @@ const products = [
     name: "Running Short",
     price: 50.0,
     image:
-      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      "https://images.canadagoose.com/image/upload/w_480,c_scale,f_auto,q_auto:best/v1576016105/product-image/2409L_61.jpg",
     isOutOfStock: false,
     defaultSize: "XS", // First size option
     defaultColor: "light-gray", // First color option
@@ -48,7 +48,7 @@ const products = [
     name: "Running Short",
     price: 50.0,
     image:
-      "https://images.unsplash.com/photo-1544966503-7cc5ac882d2e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MWP22?wid=572&hei=572&fmt=jpeg&qlt=95&.v=1591634795000",
     isOutOfStock: false,
     defaultSize: "XS", // First size option
     defaultColor: "light-gray", // First color option
