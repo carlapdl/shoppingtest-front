@@ -45,12 +45,16 @@ const ProductCard = ({
     });
   };
 
+  /* Convert product name to kebab-case for data-testid */
+  const kebabCaseName = name.toLowerCase().replace(/\s+/g, "-");
+
   return (
     <div
       className={cn("group relative bg-white cursor-pointer", className)}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={handleClick}
+      data-testid={`product-${kebabCaseName}`}
     >
       {/* Product Image */}
       <div className="relative aspect-square overflow-hidden bg-gray-50">
