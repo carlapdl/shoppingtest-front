@@ -1,5 +1,8 @@
 # Shopping Test - Frontend ✨
 
+## 🚀 Overview
+
+Test shopping site
 
 ## ✨ Tech Stack
 
