@@ -7,6 +7,8 @@ interface Product {
   price: number;
   image: string;
   isOutOfStock?: boolean;
+  defaultSize?: string;
+  defaultColor?: string;
 }
 
 interface ProductGridProps {
@@ -30,6 +32,8 @@ const ProductGrid = ({ products, className }: ProductGridProps) => {
           price={product.price}
           image={product.image}
           isOutOfStock={product.isOutOfStock}
+          defaultSize={product.defaultSize}
+          defaultColor={product.defaultColor}
         />
       ))}
     </div>

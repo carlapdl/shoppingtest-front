@@ -24,6 +24,8 @@ const productData = {
     { name: "Green", value: "green", bgClass: "bg-brand-green" },
   ],
   isOutOfStock: false, // Set to true to test out-of-stock functionality
+  defaultSize: "XS", // First size option
+  defaultColor: "light-gray",
 };
 
 const ProductDetail = () => {

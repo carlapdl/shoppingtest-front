@@ -10,6 +10,8 @@ const products = [
     image:
       "https://images.unsplash.com/photo-1567906503-7cc5ac882d2e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
     isOutOfStock: false,
+    defaultSize: "XS", // First size option
+    defaultColor: "light-gray", // First color option
   },
   {
     id: "2",
@@ -18,6 +20,8 @@ const products = [
     image:
       "https://images.unsplash.com/photo-1583743814966-8936f37f8302?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
     isOutOfStock: false,
+    defaultSize: "XS", // First size option
+    defaultColor: "light-gray", // First color option
   },
   {
     id: "3",
@@ -26,6 +30,8 @@ const products = [
     image:
       "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
     isOutOfStock: true,
+    defaultSize: "XS", // First size option
+    defaultColor: "light-gray", // First color option
   },
   {
     id: "4",
@@ -34,6 +40,8 @@ const products = [
     image:
       "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
     isOutOfStock: false,
+    defaultSize: "XS", // First size option
+    defaultColor: "light-gray", // First color option
   },
   {
     id: "5",
@@ -42,6 +50,8 @@ const products = [
     image:
       "https://images.unsplash.com/photo-1544966503-7cc5ac882d2e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
     isOutOfStock: false,
+    defaultSize: "XS", // First size option
+    defaultColor: "light-gray", // First color option
   },
   {
     id: "6",
@@ -50,6 +60,8 @@ const products = [
     image:
       "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
     isOutOfStock: false,
+    defaultSize: "XS", // First size option
+    defaultColor: "light-gray", // First color option
   },
 ];
 
