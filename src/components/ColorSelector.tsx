@@ -36,6 +36,7 @@ const ColorSelector = ({
                 : "border-gray-300 hover:border-gray-400",
             )}
             aria-label={`Select ${color.name} color`}
+            data-testid={`product-color-${color.value}`}
           />
         ))}
       </div>

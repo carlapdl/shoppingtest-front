@@ -28,6 +28,7 @@ const SizeSelector = ({
                 ? "border-gray-900 bg-gray-900 text-white"
                 : "border-gray-300 bg-white text-gray-900 hover:border-gray-400",
             )}
+            data-testid={`product-size-${size}`}
           >
             {size}
           </button>

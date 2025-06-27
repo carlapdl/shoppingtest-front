@@ -71,7 +71,9 @@ const ProductInfo = ({
         <label className="block text-sm font-medium text-gray-900 mb-2">
           PRICE:
         </label>
-        <div className="text-2xl font-normal text-gray-900">
+        <div className="text-2xl font-normal text-gray-900" 
+          data-testid={`product-prize-${price}`}
+        >
           ${price.toFixed(2)}
         </div>
       </div>
@@ -86,14 +88,14 @@ const ProductInfo = ({
             ? "bg-gray-300 text-gray-500 cursor-not-allowed"
             : "bg-brand-green text-white hover:bg-opacity-90",
         )}
-        data-testid='cart-btn'
+        data-testid='add-to-cart'
       >
         {isOutOfStock ? "OUT OF STOCK" : "ADD TO CART"}
       </button>
 
       {/* Product Description */}
       <div className="pt-4">
-        <p className="text-sm text-gray-600 leading-relaxed">{description}</p>
+        <p className="text-sm text-gray-600 leading-relaxed" data-testid='product-description'>{description}</p>
       </div>
     </div>
   );

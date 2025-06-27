@@ -79,6 +79,7 @@ const ProductCard = ({
             <button
               onClick={handleQuickAdd}
               className="w-10 h-10 bg-brand-green rounded-full flex items-center justify-center text-white hover:bg-opacity-90 transition-all duration-200 shadow-lg"
+              data-testid='cart-btn'
             >  
             <ShoppingCart className="w-5 h-5" />
             </button>
