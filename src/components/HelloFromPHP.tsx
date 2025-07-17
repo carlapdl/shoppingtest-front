@@ -8,6 +8,11 @@ const GET_ECHO_MESSAGE = gql`
   }
 `;
 
+export const GET_CATEGORIES_QUERY = gql`
+  query GetCategories {
+    categories
+  }
+`;
 // Define the GraphQL query that matches your PHP schema
 /*
 const HELLO_QUERY = gql`
@@ -33,20 +38,36 @@ function App(){
 const HelloFromPHP: React.FC = () => {
 
   // Use the useQuery hook to execute the query
+  /*
   const { loading, error, data } = useQuery(GET_ECHO_MESSAGE, {
     variables: { inputMessage: "Hello from Apollo Client!" }
   });
+*/
+  const { loading: categoriesLoading, error: categoriesError, data: categoriesData, refetch: refetchCategories } = useQuery(GET_CATEGORIES_QUERY);
+//const { loading, error, data, refetch: refetchCategories } = useQuery(GET_CATEGORIES_QUERY);
 
-  if (loading) return <p>Loading GraphQL data...</p>;
-  if (error) return <p>Error: {error.message}</p>;
+  if (categoriesLoading) return <p>Loading GraphQL data...</p>;
+  if (categoriesError) return <p>Error: {categoriesError.message}</p>;
+
+  const categories = categoriesData?.categories;
 
   return (
     <div style={{ padding: '20px' }}>
       <h1>Vite React Apollo Client</h1>
       <p>Message from GraphQL server:</p>
       {/* Access data via the field name from your query */}
-      <p><strong>{data?.echo}</strong></p>
-      <p>Check your browser's Network tab for the GraphQL requests (OPTIONS and POST) to verify CORS headers.</p>
+      <p><strong>Item Categories:</strong></p>
+      {categories && categories.length > 0 ? (
+        <ul>
+          {categories.map((category: string, index: number) => (
+            <li key={index}>
+              {category}
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p>No categories found.</p>
+      )}
     </div>
   );
   /*
