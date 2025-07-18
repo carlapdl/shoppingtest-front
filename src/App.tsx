@@ -11,15 +11,12 @@ import Kids from "./pages/Kids";
 import ProductDetail from "./pages/ProductDetail";
 import NotFound from "./pages/NotFound";
 import React from 'react';
-import HelloFromPHP from '@/components/HelloFromPHP';
-//import { gql, useQuery } from '@apollo/client';
+//import HelloFromPHP from '@/components/HelloFromPHP';
 
 const queryClient = new QueryClient();
 
-
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <HelloFromPHP />
     <TooltipProvider>
       <CartProvider>
         <Toaster />

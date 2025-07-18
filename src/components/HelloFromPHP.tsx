@@ -7,10 +7,19 @@ const GET_ECHO_MESSAGE = gql`
     echo(message: $inputMessage)
   }
 `;
-
+/*
 export const GET_CATEGORIES_QUERY = gql`
   query GetCategories {
     categories
+  }
+`;
+*/
+export const GET_CATEGORIES_QUERY = gql`
+  query GetCategories {
+    categories {
+      id    
+      name   
+    }
   }
 `;
 // Define the GraphQL query that matches your PHP schema
@@ -59,9 +68,9 @@ const HelloFromPHP: React.FC = () => {
       <p><strong>Item Categories:</strong></p>
       {categories && categories.length > 0 ? (
         <ul>
-          {categories.map((category: string, index: number) => (
-            <li key={index}>
-              {category}
+          {categories.map((category: { id: number; name: string }, index: number) => ( // <--- Update type definition
+            <li key={category.id}> {/* <--- Use category.id as key */}
+              {category.name} ({category.id}) {/* <--- Display both id and name */}
             </li>
           ))}
         </ul>
